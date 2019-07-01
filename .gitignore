@@ -1,0 +1,6 @@
+node_modules/
+conf
+R/.RData
+R/.Rproj.user
+R/.Rhistory
+R/R.Rproj
