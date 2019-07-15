@@ -1,23 +1,31 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const express = require('express');
+const app = express();
 
 admin.initializeApp(functions.config().firebase);
+const db = admin.firestore();
 
-exports.getpkmn = functions.https.onRequest((req, res) => {
-	const db = admin.firestore();
+app.get('/', (req, res)=> {
+	res.send('Working!');
+});
 
+app.get('/getpkmn', (req, res)=> {
 	let pkmn = req.query.name
 	let docRef = db.collection('pkmns').doc(pkmn)
 
 	let getDoc = docRef.get()
 		.then( (doc)=> {
-			if(!doc.exists) {
+			if( !doc.exists ) {
 				res.send('No such pkmn');
 			} else {
 				res.json( doc.data() );
 			}
 		})
-    	.catch(err => {
-      		res.send('Error getting pkmn', err);
-    });
-})
+		.catch( err => {
+			res.send('Error getting pkmn', err );
+		})
+});
+
+
+module.exports = { app };
