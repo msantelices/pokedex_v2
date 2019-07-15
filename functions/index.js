@@ -27,5 +27,6 @@ app.get('/getpkmn', (req, res)=> {
 		})
 });
 
+const api = functions.https.onRequest(app);
 
-module.exports = { app };
+module.exports = { api };
