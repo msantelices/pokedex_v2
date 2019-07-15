@@ -79,6 +79,8 @@ get_description <- function(id) {
     }
   }
   
+  desc <- gsub('\n', ' ', desc)
+  
   data <- data.frame( id = id, description = desc)
   data
   
@@ -106,7 +108,8 @@ get_all_descriptions <- function(start, end) {
 }
 
 
-save_json <- function(input, file) {
+save_json <- function(input, filename) {
+  file <- file(filename, encoding = "UTF-8")
   write( toJSON(input, auto_unbox = TRUE), file = file )
 }
 
