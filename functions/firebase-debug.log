@@ -1,0 +1,126 @@
+[debug] [2019-07-15T15:43:31.169Z] ----------------------------------------------------------------------
+[debug] [2019-07-15T15:43:31.184Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mauricio\AppData\Local\Yarn\Data\global\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2019-07-15T15:43:31.184Z] CLI Version:   7.0.2
+[debug] [2019-07-15T15:43:31.184Z] Platform:      win32
+[debug] [2019-07-15T15:43:31.184Z] Node Version:  v10.15.3
+[debug] [2019-07-15T15:43:31.184Z] Time:          Mon Jul 15 2019 11:43:31 GMT-0400 (GMT-04:00)
+[debug] [2019-07-15T15:43:31.184Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-15T15:43:31.215Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-15T15:43:31.215Z] > authorizing via signed-in user
+[debug] [2019-07-15T15:43:31.215Z] [iam] checking project pokedex-50ff4 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-07-15T15:43:31.215Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/pokedex-50ff4:testIamPermissions  
+
+[debug] [2019-07-15T15:43:32.325Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'pokedex-50ff4'...
+[info] 
+[info] i  deploying functions
+[debug] [2019-07-15T15:43:38.716Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-07-15T15:43:38.716Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/pokedex-50ff4?view=CONSUMER_VIEW  
+ 
+[debug] [2019-07-15T15:43:38.731Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/pokedex-50ff4?view=CONSUMER_VIEW  
+ 
+[debug] [2019-07-15T15:43:40.372Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:40.497Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-07-15T15:43:40.497Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/pokedex-50ff4  
+ 
+[debug] [2019-07-15T15:43:41.482Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:41.482Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/113624640229:getServerAppConfig  
+ 
+[debug] [2019-07-15T15:43:41.825Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-07-15T15:43:41.841Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/pokedex-50ff4/configs  
+ 
+[debug] [2019-07-15T15:43:42.091Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (25.22 KB) for uploading
+[debug] [2019-07-15T15:43:43.278Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/pokedex-50ff4/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-07-15T15:43:44.481Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:44.481Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-fd119799-4fa3-404c-9ac0-ed5afa4cf8e4/3918e113-66c9-468a-aacc-e8d3448203b2.zip?GoogleAccessId=service-113624640229@gcf-admin-robot.iam.gserviceaccount.com&Expires=1563207079&Signature=fHPDBHJbh93SmhPXzxYsyZQNz5LeLPM895dEWVhz8QxFtxBcEHW5WF9SyRJ1As3QsF75Ewy5kjkBpC749qgEvAKRUDcl8oPpy5Vn32Gn1lBPM2EYpGEJyOJ3O7QVbydrLiVgacx7Zw9PtZ7NqmrTGK%2BFDNUHxTr5v1N62oUIzoWEEG%2FrHjvPEvC8fG7fLSAi6J5Sm6bcoF%2FBuqMBkF15VyPLXPd8q48aaCuqoCFwpzleaAtd9K0Z78Bbemb5XjXXvN5bKS4XfhcTuOKlRMMNcAnL07wJ1ovr1fXGNzaAbbwqAUuPXdHwsWYR9ZCZWn0tpcDR9W20gS%2F1gQhgSuMRSg%3D%3D  
+
+[debug] [2019-07-15T15:43:45.513Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[debug] [2019-07-15T15:43:45.513Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/pokedex-50ff4/locations/-/functions  
+ 
+[debug] [2019-07-15T15:43:46.794Z] <<< HTTP RESPONSE 200
+[info] i  functions: creating Node.js 8 function api(us-central1)...
+[debug] [2019-07-15T15:43:46.794Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2019-07-15T15:43:46.794Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudscheduler.googleapis.com/projectSettings/pokedex-50ff4?view=CONSUMER_VIEW  
+ 
+[debug] [2019-07-15T15:43:48.497Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:48.497Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/pokedex-50ff4/locations/us-central1/functions  
+
+[debug] [2019-07-15T15:43:49.810Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:49.825Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/pokedex-50ff4/locations/-/functions  
+ 
+[debug] [2019-07-15T15:43:51.107Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:51.107Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:43:52.278Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:54.294Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:43:55.388Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:43:57.403Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:43:58.528Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:00.544Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:00.825Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:02.841Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:03.981Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:05.997Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:07.091Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:09.106Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:10.247Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:12.262Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:13.434Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:15.454Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:16.610Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:18.625Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:22.203Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:24.219Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:25.375Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:27.391Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:27.704Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-15T15:44:29.719Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cG9rZWRleC01MGZmNC91cy1jZW50cmFsMS9hcGkvdWNJeUJjVGcwalk  
+ 
+[debug] [2019-07-15T15:44:30.844Z] <<< HTTP RESPONSE 200
+[info] +  functions[api(us-central1)]: Successful create operation. 
+[info] Function URL (api): https://us-central1-pokedex-50ff4.cloudfunctions.net/api
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/pokedex-50ff4/overview

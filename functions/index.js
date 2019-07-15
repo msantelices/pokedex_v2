@@ -12,6 +12,10 @@ app.get('/', (req, res)=> {
 
 app.get('/getpkmn', (req, res)=> {
 	let pkmn = req.query.name
+	if( pkmn === undefined ) {
+		res.send('Error getting pkmn - Invalid request');
+	}
+
 	let docRef = db.collection('pkmns').doc(pkmn)
 
 	let getDoc = docRef.get()
